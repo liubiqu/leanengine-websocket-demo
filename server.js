@@ -18,10 +18,14 @@ app.use(AV.Cloud);
 app.get('/', function(req, res) {
   res.render('index');
 });
-
+app.ws('/gts', function(ws, req) {
+  ws.on('message', function(msg) {
+    ws.send("gts receive:"+msg);
+  });
+});
 app.ws('/echo', function(ws, req) {
   ws.on('message', function(msg) {
-    ws.send(msg);
+    ws.send("server receive:"+msg);
   });
 });
 app.listen(PORT);
