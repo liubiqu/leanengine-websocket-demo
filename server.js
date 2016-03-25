@@ -18,6 +18,10 @@ app.use(AV.Cloud);
 app.get('/', function(req, res) {
   res.render('index');
 });
+app.get('/gts', function(req, res) {
+  res.render('index-gts');
+});
+
 app.ws('/gts', function(ws, req) {
   ws.on('message', function(msg) {
     ws.send("gts receive:"+msg);
