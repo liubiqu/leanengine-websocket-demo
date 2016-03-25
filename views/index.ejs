@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title>LeanEngine websocket demo</title>
+  <title>GTS websocket demo</title>
   <link href="http://terminal.jcubic.pl/css/jquery.terminal.css" rel="stylesheet">
   <style>
 body {
@@ -26,7 +26,7 @@ body {
   <script src="http://terminal.jcubic.pl/js/jquery.terminal-0.8.8.min.js"></script>
   <script>
 jQuery(function($, undefined) {
-  var url = 'ws://websocket.avosapps.com/echo';
+  var url = 'ws://gts-ws.leanapp.cn/echo';
   var connection = null;
 
   $('#term').terminal(function(command, term) {
@@ -36,7 +36,7 @@ jQuery(function($, undefined) {
     }
     connection.send(command);
   }, {
-    grettings: 'LeanEngine websocket echo test',
+    grettings: 'GTS websocket echo test',
     prompt: 'ws> ',
     onInit: function(terminal) {
       terminal.echo('connecting webscoket on ' + url + ' ...');
